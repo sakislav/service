@@ -14,7 +14,7 @@ Bootstrap5(app)
 
 class Base(DeclarativeBase):
     pass
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://u9b6kdrnigq1i2:p36247ef0676403b4975ce71402371fe5f531f06837b9e4f62b67c9635772f8c0@c7itisjfjj8ril.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d58bnbpgd036r4'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://u9b6kdrnigq1i2:p36247ef0676403b4975ce71402371fe5f531f06837b9e4f62b67c9635772f8c0@c7itisjfjj8ril.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d58bnbpgd036r4'
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
 
