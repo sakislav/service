@@ -15,7 +15,12 @@ Bootstrap5(app)
 class Base(DeclarativeBase):
     pass
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///repairs.db'
+db_url = os.environ.get('DATABASE_URL')
+if not db_url:
+    db_url = 'sqlite:///repairs.db'
+
+app.config['SQLALCHEMY_DATABASE_URI'] = db_url
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
 
